@@ -92,11 +92,32 @@ num(15).then((ele)=>{console.log(ele);
 
 // session task
 
-function add(num) {
+/* function add(num) {
     return new Promise((resolve,reject)=>{
         setTimeout(()=>resolve(num+2),2000)
     })
 }
 add(4).then((ele)=>{console.log(ele);
 }).catch((error)=>{console.log(error);
-}) 
+})  */
+
+// promise chaining
+
+function add(num) {
+    return new Promise((resolve,reject)=>{
+        setTimeout(() =>resolve(num+2) ,2000);
+    })
+}
+add(4).then((ele)=>{
+    console.log(ele);
+    return add(ele);
+})
+.then((data)=>{
+    console.log(data);
+    return add(data)
+})
+.then((a)=>{console.log(a);
+}).catch((error)=>{console.log(error);
+})
+
+
