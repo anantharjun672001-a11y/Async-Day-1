@@ -74,7 +74,7 @@ num.then((ele)=>{console.log(ele);
 
 //promise using function
  
-function num(age){
+/* function num(age){
     return new Promise((resolve,reject)=>{
        if(age>18){
         resolve("eligible");
@@ -88,4 +88,15 @@ function num(age){
 }
 num(15).then((ele)=>{console.log(ele);
 }).catch((error)=>{console.log(error);
-})
+}) */
+
+// session task
+
+function add(num) {
+    return new Promise((resolve,reject)=>{
+        setTimeout(()=>resolve(num+2),2000)
+    })
+}
+add(4).then((ele)=>{console.log(ele);
+}).catch((error)=>{console.log(error);
+}) 
