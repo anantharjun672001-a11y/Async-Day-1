@@ -55,7 +55,7 @@ console.log("2.end");
 
 //promise
 
-const num= new Promise((resolve,reject)=>{
+/* const num= new Promise((resolve,reject)=>{
     let age=9;
     if(age>18){
         resolve("eligible");
@@ -67,5 +67,25 @@ const num= new Promise((resolve,reject)=>{
     }
 })
 num.then((ele)=>{console.log(ele);
+}).catch((error)=>{console.log(error);
+})
+ */
+
+
+//promise using function
+ 
+function num(age){
+    return new Promise((resolve,reject)=>{
+       if(age>18){
+        resolve("eligible");
+        
+    }
+    else{
+        reject("not eligible");
+        
+    } 
+    })
+}
+num(15).then((ele)=>{console.log(ele);
 }).catch((error)=>{console.log(error);
 })
